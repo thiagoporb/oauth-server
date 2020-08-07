@@ -4,7 +4,7 @@ import com.example.oauth.domain.Credential
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 
-interface UserRepository : JpaRepository<Credential, String> {
+interface CredentialRepository : JpaRepository<Credential, String> {
 
-    fun findOneByUsername(username: String): Optional<Credential>
+    fun findByUsername(username: String): Optional<Credential>
 }

@@ -9,17 +9,17 @@ CREATE TABLE IF NOT EXISTS credential
     CONSTRAINT credential_pkey PRIMARY KEY (username)
 );
 
-CREATE TABLE authority
+CREATE TABLE IF NOT EXISTS authority
 (
     name character varying(50) NOT NULL,
     CONSTRAINT authority_pkey PRIMARY KEY (name)
 );
 
-CREATE TABLE user_authority
+CREATE TABLE IF NOT EXISTS credential_authority
 (
     username character varying(255) NOT NULL,
     authority character varying(255) NOT NULL,
-    CONSTRAINT user_authority_pkey PRIMARY KEY (username, authority),
+    CONSTRAINT credential_authority_pkey PRIMARY KEY (username, authority),
     CONSTRAINT fk3odsunh03vw9546adkrvdfp79 FOREIGN KEY (authority)
         REFERENCES authority (name) MATCH SIMPLE
         ON UPDATE NO ACTION
