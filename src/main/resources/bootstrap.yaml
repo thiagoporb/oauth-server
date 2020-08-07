@@ -1,27 +1,9 @@
 spring:
   application:
     name: oauth-server
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/oauth?retryWrites=true&w=majority
-  #cloud:
-  #  config:
-      #uri: http://localhost:8888/
-  #    fail-fast: false
-  #    discovery:
-  #      enabled: false
-security:
-  oauth2:
-    client:
-      access-token-validity-seconds: 1800
-      authorized-grant-types: password,refresh_token
-      client-id: jst-messaging
-      client-secret: 123456
-      resource-ids: resources
-      scope: read,write
-logging:
-  level:
-    #reactor.netty: debug
-    org.springframework.data: debug
-    #org.springframework.web.reactive.function.client.ExchangeFunctions: TRACE
-    reactivefeign.client.log: trace
+  cloud:
+    config:
+      uri: http://localhost:8888/
+      fail-fast: false
+      discovery:
+        enabled: false
