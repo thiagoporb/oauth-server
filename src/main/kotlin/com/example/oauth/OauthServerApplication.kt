@@ -8,9 +8,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 @EnableJpaRepositories(basePackages = ["com.example.oauth.repository"])
 //@EnableEurekaClient
 @SpringBootApplication
-class Application
+class OauthServerApplication
 
 fun main(args: Array<String>) {
 
-    runApplication<Application>(*args)
+    runApplication<OauthServerApplication>(*args)
 }
